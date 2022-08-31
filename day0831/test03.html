@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       table{
+            border: 1px solid green;
+            border-collapse: collapse; /* border 라인을 붙여주는 거*/
+        }
+        tr{/* border 설정이 안 먹힘*/
+            border: 1px solid royalblue;
+        }
+        td{
+            border: 1px solid rosybrown;
+        }
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            text-align: center;
+            margin: 0 auto; /*auto를 주면 가운데로 배치됨 자신의 부모에서*/
+        }
+        .child{
+            width: 100px;
+            background-color: azure;
+        }
+        
+    </style>
+</head>
+<body>
+    <div><div class="child">안녕</div></div>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+        </tr>
+    </table>
+
+</body>
+</html>

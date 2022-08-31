@@ -1,0 +1,152 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+/* 상단 Header style start */
+a{
+    text-decoration: none;
+    color: black;    
+}
+
+.header{
+    height: 70px;
+    box-shadow: 0px 1px 10px grey;
+}
+
+#logo{
+    font-size: 30px;
+    font-weight: bold;
+    color: skyblue;
+    height: 70px;
+    /* display: inline-block;     */
+    vertical-align: middle;
+    line-height: 70px;
+    float: left;
+}
+
+.nav{    
+    position: relative;
+    margin: auto;    
+    max-width: 1200px;
+    width: 80%;
+}
+
+.nav ul{
+    float: right;
+    position: absolute;
+    right: 0;
+    list-style: none;
+    top: 40px;
+}
+
+.nav ul li{
+    float: left;
+    margin-right: 10px;
+}
+/* 상단 Header style end */
+
+/* 중앙 content start */
+.content{
+    max-width: 1200px;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* 중앙 left */
+.content-left{
+    width: 30%;
+    float: left;
+}
+
+.content-left-profile{
+    width: 50%;
+    margin: 10px auto;
+}
+
+.content-left-profile img{
+    width: 100%;
+}
+
+.content-left-make-poll *{
+    display:none;
+}
+
+.content-left-vote{
+    border:2px solid deepskyblue;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.content-left-vote-title{
+    color: rgb(16, 82, 100);
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}  
+
+.content-left-vote-question{
+    color: brown;
+    font-weight: bold;
+}
+
+.content-left-vote-items li{
+    margin: 10px;
+}
+
+.content-left-vote-items label{
+    color: grey;
+    font-size: 15px;
+}
+
+.vote-btns{
+    text-align: right;
+}
+
+.vote-btns button{    
+    background-color: rgb(145, 195, 238);
+    border: 1px solid rgb(61, 5, 114);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.vote-btns .btn-primary{
+    background-color: red;
+    color: white;
+}
+
+/* 중앙 main */
+.content-main{
+    width: 70%;
+    float: right;
+}
+.content-main-article{
+    width: 98%;
+    height: 130px;
+    border: 1px solid red;
+    margin: 10px 10px;
+}
+
+/* 중앙 content end */
+
+
+/* 하단 footer start */
+.footer{
+    height: 70px;
+    max-width: 1200px;
+    width: 80%;
+    margin: auto;
+    text-align: right;
+    border: 1px solid lightblue;
+}
+
+.footer li{
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 15px;
+    color: grey;
+    line-height: 70px;
+}
+/* 하단 footer end */

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: aqua;
+            border: 1px double greenyellow;
+            display: inline-block; /*이거 쓰면 div여도 span처럼 쪼로로 있음*/
+            height : 400px; /*inline 상태에서는 안 먹힘*/
+            width: 400px;
+        }
+        span{
+            border: 5px double aqua;
+            display: block; /*block은 크기 지정이 가능*/
+            height : 10px; /*inline 상태에서는 안 먹힘*/
+            width: 100px; 
+            overflow: hidden; /*영역 밖으로 넘치면 어떡할지 정해주는거 hidden은 감추겠대*/
+            padding: 100px;
+        }
+        h2{
+            background-color: rgba(190, 50, 90, 0.65);
+            position: absolute;
+            left: 0px;
+            right: 0px;
+        }
+    </style>
+
+</head>
+<body>
+    <div>111</div>
+    <div>222</div>
+    <div>333</div>
+    <h2>111</h2>
+    <h2>222</h2>
+    <h2>333</h2>
+    <span>안녕</span><span>하세요</span><span>!!!</span>
+</body>
+</html>

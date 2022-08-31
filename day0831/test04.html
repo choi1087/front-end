@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* position 지정 안했을 때 static. */
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+
+        #target1 {
+            /* static 이었을 때의 위치를 기준으로 relative한 위치 지정 */
+            position: relative;
+            background-color: aquamarine;
+            left: 200px;
+            top: 300px;
+        }
+
+        #target2 {
+            /* 조상 노드 중 가장 가까운 non-static 기준. 없으면 html 기준 */
+            /* non-static인 parent를 기준으로 함 */
+            position: absolute;
+            background-color: blueviolet;
+        }
+
+        .parent {
+            background-color: blanchedalmond;
+            position: relative;
+            overflow: hidden;
+            height: 100px;
+            width: 300px;
+        }
+
+        #fixed {
+            /* 화면 기준 좌상 (0, 0) */
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            right: 0px;
+            top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div id="target1"></div>
+    <div class="parent">
+        <div id="target2"></div>
+    </div>
+
+    
+</body>
+
+</html>
