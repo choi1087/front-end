@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result">0</div>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+
+    <script>
+        let result = document.querySelector('#result');
+        let btns = document.querySelectorAll('button');
+
+        function countUp(){
+            let num = parseInt(result.innerText);
+            num++;
+            // result.innerHTML = `<b>` + num + `</b>`;
+            result.innerHTML = `<b>${num}</b>`
+            console.log(result.innerHTML + "카운트됨")
+        }
+
+        let timer = null;
+        btns[0].onclick = function(){
+            if(timer == null){
+               timer = setInterval(countUp, 1000);
+            }
+        };
+        btns[1].onclick = function(){
+            clearInterval(timer);
+            timer = null;
+            result.innerText = '0';
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="result">0</div>
+    <button id="count">COUNT</button>
+    <button id="reset">RESET</button>
+
+    <script>
+        let result = document.getElementById('result'); //div를 가져옴(객체)
+        let btns = document.getElementsByTagName('button'); //button 태그 여러개임(객체 배열)
+        function clickCount(){
+            let num = parseInt(result.innerText);
+            num++;
+            result.innerHTML = `<b>` + num + `</b>`;
+            result.innerHTML = `<b>${num}</b>`
+        }
+        function clickReset(){
+            result.innerText='0';
+        }
+
+        btns[0].onclick = clickCount;
+        btns[1].onclick = clickReset;
+    </script>
+</body>
+</html>
