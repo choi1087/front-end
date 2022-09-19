@@ -13,9 +13,9 @@ public class DBUtil {
 	static {
 		try {
 			Class.forName(driver);
-			System.out.println("µå¶óÀÌ¹ö ·Îµù ¿Ï·á");
+			System.out.println("ë“œë¼ì´ë¹™ ì„±ê³µ");
 		} catch (ClassNotFoundException e) {
-			System.out.println("µå¶óÀÌ¹ö ·Îµù ¿À·ù");
+			System.out.println("ë“œë¼ì´ë¹™ ì˜¤ë¥˜");
 			e.printStackTrace();
 		}
 	}
@@ -25,7 +25,7 @@ public class DBUtil {
 		try {
 			conn = DriverManager.getConnection(url, dbUser, dbPw);
 		} catch (SQLException e) {
-			System.out.println("Ä¿³Ø¼Ç »ı¼º ¿À·ù");
+			System.out.println("ì»¤ë„¥ì…˜ ì˜¤ë¥˜");
 			e.printStackTrace();
 		}
 		return conn;

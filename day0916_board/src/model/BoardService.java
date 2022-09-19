@@ -3,8 +3,7 @@ package model;
 import java.util.HashMap;
 import java.util.Map;
 
-// DAO�� ���ϴ� ����Ͻ� ���� ���� ó���� ���� Ŭ����
-// http �� ��û���� �������� ����. ���� servlet�ʿ��� �˾Ƽ� �϶�� �սô�.
+
 public class BoardService {
 	private static final int COUNT_PER_PAGE = 5;
 	private BoardDao dao = new BoardDao();
@@ -14,15 +13,15 @@ public class BoardService {
 		pageMap.put("currPage", page);
 
 		int totalCount = dao.selectTotalCount();
-		int totalPage = totalCount / COUNT_PER_PAGE; // �� �������� ������ ���� ����
+		int totalPage = totalCount / COUNT_PER_PAGE;
 		if (totalCount % COUNT_PER_PAGE > 0) {
 			totalPage++;
 		}
 
-		int startPage = (page - 1) / 10 * 10 + 1; // 1~10�� ���� ������, 11~20�� ����������11
-		int endPage = startPage + 9; // ȭ�� �ϴ� �� �信���� ���������� + 9
+		int startPage = (page - 1) / 10 * 10 + 1; 
+		int endPage = startPage + 9; 
 
-		if (endPage > totalPage) { // �� �Խñ� ��ü�� ���� ��� �� ������ ���̱�
+		if (endPage > totalPage) { 
 			endPage = totalPage;
 		}
 
@@ -38,6 +37,10 @@ public class BoardService {
 	public void updateClick(int bno) {
 		dao.updateReadCount(bno);
 	}
+	
+	public void delete(int bno) {
+		dao.delete(bno);
+	}
 
 	public boolean write(BoardDTO board) {
 		if (dao.insert(board) == 1) {
@@ -45,5 +48,4 @@ public class BoardService {
 		}
 		return false;
 	}
-
 }
