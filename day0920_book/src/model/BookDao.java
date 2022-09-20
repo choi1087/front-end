@@ -39,7 +39,7 @@ public class BookDao {
 		int result = -1;
 		try {
 			conn = DBUtil.getInstance().getConnection();
-			String sql = "delete from board_tb where bno = ?";
+			String sql = "delete from book_tb where bno = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, no);
 

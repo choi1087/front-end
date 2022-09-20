@@ -23,6 +23,14 @@ public class BookServlet extends HttpServlet {
 		if ("list".equals(action)) {
 			req.setAttribute("bookList", service.selectAll());
 			req.getRequestDispatcher("index.jsp").forward(req, res);
+		}else if("detail".equals(action)) {
+			int no = Integer.parseInt(req.getParameter("no"));
+			req.setAttribute("book", service.selectOne(no));
+			req.getRequestDispatcher("BookDetail.jsp").forward(req, res);
+		}else if("delete".equals(action)) {
+			int no = Integer.parseInt(req.getParameter("no"));
+			service.delete(no);
+			req.getRequestDispatcher("BookDelete.jsp").forward(req, res);			
 		}
 
 	}

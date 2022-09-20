@@ -9,31 +9,32 @@
 </head>
 <body>
 	<%@ include file="header.jsp"%>
-	<form action="book" method="post">
-		<input type="hidden" name="action" value="add">
+
+	<form>
 		<table border="1">
+
 			<tr>
 				<td>제목</td>
-				<td><input type="text" name="title"></td>
+				<td>${book.title }</td>
 			</tr>
-
 			<tr>
 				<td>저자</td>
-				<td><input type="text" name="writer"></td>
+				<td>${book.writer}</td>
 			</tr>
-
 			<tr>
 				<td>가격</td>
-				<td><input type="text" name="price"></td>
+				<td>${book.price }</td>
 			</tr>
-
 			<tr>
 				<td>출판사</td>
-				<td><input type="text" name="publisher"></td>
+				<td>${book.publisher }</td>
 			</tr>
-		</table>
-		<input type="submit" value="작성완료">
-	</form>
 
+
+		</table>
+		<a
+			href="${pageContext.request.contextPath }/book?action=delete&no=${book.no}">[현재
+			책 삭제하기]</a>
+	</form>
 </body>
 </html>

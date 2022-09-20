@@ -29,7 +29,8 @@
 			<c:forEach items="${requestScope.bookList }" var="b">
 				<tr>
 					<td>${b.no }</td>
-					<td>${b.title }</td>
+					<td><a
+						href="${pageContext.request.contextPath}/book?action=detail&no=${b.no}">${b.title }</a></td>
 					<td>${b.writer }</td>
 					<td>${b.price }</td>
 					<td>${b.publisher }</td>
@@ -39,8 +40,9 @@
 
 		</c:if>
 	</table>
-	
+
 	<input type="button" value="체크한 도서 모두 삭제">
+	<br>
 	<a href="BookAdd.jsp">도서 추가 하러 가기</a>
 
 
