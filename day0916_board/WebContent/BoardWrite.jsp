@@ -28,5 +28,37 @@
 		</table>
 		<input type="submit" value="작성완료">
 	</form>
+	<hr>
+	네이버 쇼핑 검색:
+	<input type="text" id="keyword">
+	<button id="btnSearch">검색</button>
+	<table border="1" id="resultSearch">
+		<tr>
+
+		</tr>
+	</table>
+
+	<script type="text/javascript">
+		let btn = document.getElementById("btnSearch");
+		btn.onclick= async function(){
+			let keyword = document.getElementById('keyword').value;
+			//alert(keyword);
+			let url = '<%=request.getContextPath()%>/naverShopping?keyword' +keyword;
+			let response=await fetch(url);
+			
+			let data = await response.json();
+			//console.log(data);
+			let result ='';
+			data.items.forEach(function(item){
+				result += '<tr>';
+				result+= '<td>'+item.title+'</td>';
+				result+= '<td>'+item.lprice+'</td>';
+				result+= '<td><a href=" '+item.link +'">[바로가기]</a></td>';
+				result += '</tr>';
+			})
+			document.getElementById('resultSearch').innerHTML = result;
+		}
+		
+	</script>
 </body>
 </html>
