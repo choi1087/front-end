@@ -35,6 +35,10 @@ public class MemberServlet extends HttpServlet {
 				request.setAttribute("msg", "로그아웃 완료되었습니다.");
 				request.getRequestDispatcher("index.jsp").forward(request, response);
 			}
+			// 회원가입
+			else if ("register".equals(action)) {
+				request.getRequestDispatcher("member/register.jsp").forward(request, response);
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -50,13 +54,15 @@ public class MemberServlet extends HttpServlet {
 		String action = request.getParameter("action");
 		try {
 			// 회원 추가
-			if ("add".equals(action)) {
-				String id = request.getParameter("id");
-				String pw = request.getParameter("pw");
-				String name = request.getParameter("name");
-				String address = request.getParameter("address");
-				String phone = request.getParameter("phone");
+			if ("register".equals(action)) {
+				String id = request.getParameter("memberId");
+				String pw = request.getParameter("memberPw");
+				String name = request.getParameter("memberName");
+				String address = request.getParameter("memberAddress");
+				String phone = request.getParameter("memberPhone");
+				System.out.println("REGISTER");
 				service.insert(new Member(id, pw, name, address, phone));
+				request.getRequestDispatcher("/member/memberRegisterSuccess.jsp").forward(request, response);;
 
 			} else if ("login".equals(action)) {
 				String id = request.getParameter("id");
@@ -65,7 +71,6 @@ public class MemberServlet extends HttpServlet {
 				System.out.println("LOGIN");
 				request.getSession().setAttribute("loginInfo", id);
 				request.getRequestDispatcher("index.jsp").forward(request, response);
-
 			}
 
 		} catch (Exception e) {
