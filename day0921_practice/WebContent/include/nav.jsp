@@ -14,11 +14,13 @@
 				ID: <input type="text" name="id"> PW: <input type="password"
 					name="pw"> <input type="submit" value="LOGIN">
 			</form>
+
+			<a href="${root }/member?action=register">회원가입</a>
 		</c:if>
 
 		<c:if test="${not empty sessionScope.loginInfo }">
 			<span style="color: white"><b>${loginInfo }</b>님 반갑습니다.</span>
-			<a href="${root }/user?action=logout">로그아웃</a>
+			<a href="${root }/member?action=logout">로그아웃</a>
 		</c:if>
 
 	</ul>
