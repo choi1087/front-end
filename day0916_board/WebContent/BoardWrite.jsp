@@ -43,7 +43,7 @@
 		btn.onclick= async function(){
 			let keyword = document.getElementById('keyword').value;
 			//alert(keyword);
-			let url = '<%=request.getContextPath()%>/naverShopping?keyword' +keyword;
+			let url = '<%=request.getContextPath()%>/naverShopping?keyword=' +keyword;
 			let response=await fetch(url);
 			
 			let data = await response.json();
